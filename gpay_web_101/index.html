@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Pay API for Web 101 -- Codelabs</title>
+</head>
+
+<body>
+    <!--Se agrega un DIV vacío a la página con el ID gpay-container. Este elemento DOM será el elemento superior en el que se agregará el botón de Google Pay. Puedes colocar este elemento en el diseño de tu sitio web cuando corresponda-->
+<div id="gpay-container"></div>
+<!--La etiqueta de secuencia de comandos main.js se coloca en el DOM después del elemento gpay-container. Esto es necesario para garantizar que el DIV del contenedor esté presente en el DOM antes de que main.js lo consulte. Además, la secuencia de comandos es síncrona para garantizar que se cargue antes de que se cargue pay.js, ya que el método onGooglePayLoaded() debe existir antes de que se complete la carga. Hay otras formas de lograr el mismo efecto, pero no las analizaremos aquí-->
+
+<!--Botón de comprar -->
+<div id="container" style="width: 234px; height: 40px;"></div>
+
+  <p>Transaction info and errors will be logged to the console.<br>
+    La información de la transacción y los errores se registrarán en la consola.
+  </p>
+  <script type="text/javascript" src="main.js"></script>
+  <script
+    async src="https://pay.google.com/gp/p/js/pay.js"
+    onload="onGooglePayLoaded()">
+  </script>
+</body>
+
+</html>
